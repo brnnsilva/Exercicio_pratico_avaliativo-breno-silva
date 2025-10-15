@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de Lista</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+
+    input {
+      padding: 3px;
+      border: 1px solid #aaa;
+    }
+
+    button {
+      padding: 3px 8px;
+      margin-left: 5px;
+    }
+
+    #mensagem {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gerador de Lista</h1>
+
+  <label for="quantidade">Digite a quantidade de itens:</label><br>
+  <input type="number" id="quantidade" placeholder="Digite a quantidade de itens">
+  <button onclick="gerarLista()">Gerar Lista</button>
+
+  <div id="mensagem"></div>
+
+  <script>
+    function gerarLista() {
+      var qtd = document.getElementById("quantidade").value;
+      var msg = document.getElementById("mensagem");
+      msg.innerHTML = ""; // limpa a mensagem anterior
+
+      if (qtd === "" || isNaN(qtd) || qtd <= 0) {
+        msg.innerHTML = "<p>Por favor, insira um número válido.</p>";
+        return;
+      }
+
+      var lista = "<ul>";
+      for (var i = 1; i <= qtd; i++) {
+        lista += "<li>Breno Silva " + i + "</li>";
+      }
+      lista += "</ul>";
+
+      msg.innerHTML = lista;
+    }
+  </script>
+</body>
+</html>
