@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Iteração</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+
+    input {
+      padding: 3px;
+      border: 1px solid #aaa;
+    }
+
+    button {
+      padding: 3px 8px;
+      margin-left: 5px;
+    }
+
+    #mensagem {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bem-vindo!</h1>
+
+  <label for="nome">Digite seu nome:</label><br>
+  <input type="text" id="nome" placeholder="Seu nome">
+  <button onclick="mostrarMensagem()">Clique aqui</button>
+
+  <p id="mensagem"></p>
+
+  <script>
+    function mostrarMensagem() {
+      var nome = document.getElementById("nome").value.trim();
+      var msg = document.getElementById("mensagem");
+
+      if (nome === "") {
+        msg.textContent = "Por favor, insira seu nome.";
+      } else {
+        msg.textContent = "Olá, " + nome + "! Seja bem-vindo à página do aluno(a).";
+      }
+    }
+  </script>
+</body>
+</html>
